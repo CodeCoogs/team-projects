@@ -4,6 +4,7 @@ GITGUD:
 - Tailer Nguyen
 - Fernando Ramirez
 - Elizabeth Nguyen
+- Bryant Huynh
 // add name and newline
 
 
