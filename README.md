@@ -5,6 +5,7 @@ GITGUD:
 - Fernando Ramirez
 - Elizabeth Nguyen
 - Bryant Huynh
+- Mihir Sahu
 // add name and newline
 
 
