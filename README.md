@@ -6,6 +6,7 @@ GITGUD:
 - Elizabeth Nguyen
 - Bryant Huynh
 - Mihir Sahu
+- Adam Nguyen
 // add name and newline
 
 
