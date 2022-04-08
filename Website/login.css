@@ -1,5 +1,11 @@
 
-.gradient-custom {
+.bg-color {
 /* fallback for old browsers */
 background: #05445E;
+}
+
+.CoCo {
+    width: 400px;
+    height: 400px;
+    z-index: 1;
 }
