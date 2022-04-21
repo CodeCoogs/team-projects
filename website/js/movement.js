@@ -24,3 +24,4 @@ output4.innerHTML = slider4.value;
 slider4.oninput = function () {
     output4.innerHTML = this.value;
 };
+

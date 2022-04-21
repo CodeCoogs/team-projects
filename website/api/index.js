@@ -22,4 +22,7 @@ app.use('/wrist', wrist);
 app.use('/elbow', elbow);
 app.use('/shoulder', shoulder);
 
-app.listen(3000);
+
+app.listen(3000, () => {
+    console.log("hi");
+});
