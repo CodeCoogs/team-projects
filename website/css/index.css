@@ -4,6 +4,12 @@ body {
 	color: #05445E;
 }
 
+.container {
+  position: relative;
+  margin: 0 10rem 0 10rem;
+  
+}
+
 .slider {
   -webkit-appearance: none;
   width: 100%;
