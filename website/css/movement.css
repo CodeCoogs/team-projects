@@ -1,13 +1,23 @@
-/*Body styles*/
-body {
-	background-color: #0f172a;
-	color: #67e8f9;
+:root {
+  --blue: #3b82f6;
+  --purple: #6366f1;
+  --yellow: #facc15;
+  --green: #22c55e;
+  --red: #dc2626;
+  --white: #f9fafb;
+  --black: #0f172a;
+  --dark-grey: #334155;
 }
 
-.container {
+/*Body styles*/
+body {
+	background-color: var(--black);
+	color: var(--white);
+}
+
+.slider-container {
   position: relative;
   margin: 0 10rem 0 10rem;
-  
 }
 
 .slider {
@@ -15,27 +25,81 @@ body {
   width: 100%;
   height: 15px;
   border-radius: 5px;
-  background: #f9fafb;
+  background: var(--dark-grey);
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
   transition: opacity .2s;
 }
-
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #67e8f9;
   cursor: pointer;
 }
-
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #67e8f9;
   cursor: pointer;
+}
+/* Finger colors */
+#thumb::-webkit-slider-thumb {
+  background: var(--blue);
+}
+#thumb::-moz-range-thumb {
+  background: var(--blue);
+}
+#index::-webkit-slider-thumb {
+  background: var(--blue);
+}
+#index::-moz-range-thumb {
+  background: var(--blue);
+}
+#middle::-webkit-slider-thumb {
+  background: var(--blue);
+}
+#middle::-moz-range-thumb {
+  background: var(--blue);
+}
+#ring::-webkit-slider-thumb {
+  background: var(--blue);
+}
+#ring::-moz-range-thumb {
+  background: var(--blue);
+}
+#pinky::-webkit-slider-thumb {
+  background: var(--blue);
+}
+#pinky::-moz-range-thumb {
+  background: var(--blue);
+}
+#hand::-webkit-slider-thumb {
+  background: var(--purple);
+}
+#hand::-moz-range-thumb {
+  background: var(--purple);
+}
+/* wrist color */
+#wrist::-webkit-slider-thumb {
+  background: var(--yellow);
+}
+#wrist::-moz-range-thumb {
+  background: var(--yellow);
+}
+/* elbow color */
+#elbow::-webkit-slider-thumb {
+  background: var(--green);
+}
+#elbow::-moz-range-thumb {
+  background: var(--green);
+}
+/* shoulder color */
+#shoulder::-webkit-slider-thumb {
+  background: var(--red);
+}
+#shoulder::-moz-range-thumb {
+  background: var(--red);
 }

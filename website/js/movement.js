@@ -14,17 +14,21 @@ let index = 0;
 let middle = 0;
 let ring = 0;
 let pinky = 0;
+// Hand - moves all fingers at once
+let slider6 = document.getElementById("hand");
+let output6 = document.getElementById("handValue");
+let hand = 0;
 // Wrist
-let slider6 = document.getElementById("wrist");
-let output6 = document.getElementById("wristValue");
+let slider7 = document.getElementById("wrist");
+let output7 = document.getElementById("wristValue");
 let wrist = 0;
 // Elbow
-let slider7 = document.getElementById("elbow");
-let output7 = document.getElementById("elbowValue");
+let slider8 = document.getElementById("elbow");
+let output8 = document.getElementById("elbowValue");
 let elbow = 0;
 // Shoulder
-let slider8 = document.getElementById("shoulder");
-let output8 = document.getElementById("shoulderValue");
+let slider9 = document.getElementById("shoulder");
+let output9 = document.getElementById("shoulderValue");
 let shoulder = 0;
 
 // Updates the servo angle back to zero
@@ -70,27 +74,48 @@ slider5.oninput = async function () {
     pinky = this.value;
     await sendFingerValues(thumb, index, middle, ring, pinky);
 };
-
-// Slider for wrist
+// Slider for hands
 output6.innerHTML = slider6.value;
 slider6.oninput = async function () {
+    // Move all fingers 
+    slider1.value = slider6.value;
+    output1.innerHTML = this.value;
+    slider2.value = slider6.value;
+    output2.innerHTML = this.value;
+    slider3.value = slider6.value;
+    output3.innerHTML = this.value;
+    slider4.value = slider6.value;
+    output4.innerHTML = this.value;
+    slider5.value = slider6.value;
+    output5.innerHTML = this.value;
+
     output6.innerHTML = this.value;
+    hand = this.value;
+    await sendFingerValues(hand, hand, hand, hand, hand);
+};
+
+
+
+// Slider for wrist
+output7.innerHTML = slider7.value;
+slider7.oninput = async function () {
+    output7.innerHTML = this.value;
     wrist = this.value;
     await sendWristValue(wrist);
 };
 
 // Slider for elbow
-output7.innerHTML = slider7.value;
-slider7.oninput = async function () {
-    output7.innerHTML = this.value;
+output8.innerHTML = slider8.value;
+slider8.oninput = async function () {
+    output8.innerHTML = this.value;
     elbow = this.value;
     await sendElbowValue(elbow);
 };
 
 // Slider for shoulder
-output8.innerHTML = slider8.value;
-slider8.oninput = async function () {
-    output8.innerHTML = this.value;
+output9.innerHTML = slider9.value;
+slider9.oninput = async function () {
+    output9.innerHTML = this.value;
     shoulder = this.value;
     await sendShoulderValue(shoulder);
 };
