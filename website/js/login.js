@@ -7,7 +7,7 @@
 
         // type in test for both username and password to re-direct you to slider page
         if (username == "test" && password == "test") {
-            window.location.href = 'index.html';
+            window.location.href = 'movement.html';
         } else {
             document.getElementById("alert").style.display = "flex";
         }

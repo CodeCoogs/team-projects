@@ -1,33 +1,39 @@
 // Fingers
-let slider1 = document.getElementById("range1");
-let output1 = document.getElementById("value1");
-let slider2 = document.getElementById("range2");
-let output2 = document.getElementById("value2");
-let slider3 = document.getElementById("range3");
-let output3 = document.getElementById("value3");
-let slider4 = document.getElementById("range4");
-let output4 = document.getElementById("value4");
-let slider5 = document.getElementById("range5");
-let output5 = document.getElementById("value5");
+let slider1 = document.getElementById("thumb");
+let output1 = document.getElementById("thumbValue");
+let slider2 = document.getElementById("index");
+let output2 = document.getElementById("indexValue");
+let slider3 = document.getElementById("middle");
+let output3 = document.getElementById("middleValue");
+let slider4 = document.getElementById("ring");
+let output4 = document.getElementById("ringValue");
+let slider5 = document.getElementById("pinky");
+let output5 = document.getElementById("pinkyValue");
 let thumb = 0;
 let index = 0;
 let middle = 0;
 let ring = 0;
 let pinky = 0;
 // Wrist
-let slider6 = document.getElementById("range6");
-let output6 = document.getElementById("value6");
+let slider6 = document.getElementById("wrist");
+let output6 = document.getElementById("wristValue");
 let wrist = 0;
 // Elbow
-let slider7 = document.getElementById("range7");
-let output7 = document.getElementById("value7");
+let slider7 = document.getElementById("elbow");
+let output7 = document.getElementById("elbowValue");
 let elbow = 0;
 // Shoulder
-let slider8 = document.getElementById("range8");
-let output8 = document.getElementById("value8");
+let slider8 = document.getElementById("shoulder");
+let output8 = document.getElementById("shoulderValue");
 let shoulder = 0;
 
-
+// Updates the servo angle back to zero
+window.addEventListener('load', async function() {
+    await sendFingerValues(thumb, index, middle, ring, pinky);
+    await sendWristValue(wrist);
+    await sendElbowValue(elbow);
+    await sendShoulderValue(shoulder);
+})
 
 // Update the current slider value (each time you drag the slider handle)
 // Sliders for fingers
@@ -67,26 +73,26 @@ slider5.oninput = async function () {
 
 // Slider for wrist
 output6.innerHTML = slider6.value;
-slider6.oninput = /*async*/ function () {
+slider6.oninput = async function () {
     output6.innerHTML = this.value;
-    pinky = this.value;
-    //await sendWristValue(wrist);
+    wrist = this.value;
+    await sendWristValue(wrist);
 };
 
 // Slider for elbow
 output7.innerHTML = slider7.value;
-slider7.oninput = /*async*/ function () {
+slider7.oninput = async function () {
     output7.innerHTML = this.value;
-    pinky = this.value;
-    //await sendElbowValue(elbow);
+    elbow = this.value;
+    await sendElbowValue(elbow);
 };
 
 // Slider for shoulder
 output8.innerHTML = slider8.value;
-slider8.oninput = /*async*/ function () {
+slider8.oninput = async function () {
     output8.innerHTML = this.value;
-    pinky = this.value;
-    //await sendShoulderValue(shoulder);
+    shoulder = this.value;
+    await sendShoulderValue(shoulder);
 };
 
 // Sends post request to /fingers end point
@@ -125,7 +131,7 @@ async function sendWristValue(wrist){
 
     // Send the data
     xhr.send(JSON.stringify({
-        wrist: parseInt(wrist),
+        wrist: parseInt(wrist)
     }));
 }
 
@@ -143,7 +149,7 @@ async function sendElbowValue(elbow){
 
     // Send the data
     xhr.send(JSON.stringify({
-        elbow: parseInt(elbow),
+        elbow: parseInt(elbow)
     }));
 }
 
@@ -161,6 +167,6 @@ async function sendShoulderValue(shoulder){
 
     // Send the data
     xhr.send(JSON.stringify({
-        shoulder: parseInt(shoulder),
+        shoulder: parseInt(shoulder)
     }));
 }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Robotic Arm Controller</title>
+		<link rel="icon", href="images/robotic_arm.jpg">
+		<link rel="stylesheet" href="css/movement.css">
+		<script src="./js/movement.js" defer></script>
+		<!--<script src="./js/arduino.js" defer></script>-->
+		<!--
+		<link href="https://cdn.jsdelivr.net/npm/daisyui@2.14.3/dist/full.css" rel="stylesheet" type="text/css" />
+		<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />	
+		-->
+	</head>
+		
+	<body>
+
+
+	<div class="container">
+
+		<div class="slidecontainer">
+			<div> Fingers: </div>
+			<input type="range" min="0" max="180" value="0" class="slider" id="thumb">
+			<p>Value: <span id="thumbValue"></span></p>
+		</div>
+		<div class="slidecontainer">
+			<input type="range" min="0" max="180" value="0" class="slider" id="index">
+			<p>Value: <span id="indexValue"></span></p>
+		</div>
+		<div class="slidecontainer">
+			<input type="range" min="0" max="180" value="0" class="slider" id="middle">
+			<p>Value: <span id="middleValue"></span></p>
+		</div>
+		<div class="slidecontainer">
+			<input type="range" min="0" max="180" value="0" class="slider" id="ring">
+			<p>Value: <span id="ringValue"></span></p>
+		</div>
+		<div class="slidecontainer">
+			<input type="range" min="0" max="180" value="0" class="slider" id="pinky">
+			<p>Value: <span id="pinkyValue"></span></p>
+		</div>
+
+		<div class="slidecontainer">
+			<div> Wrist: </div>
+			<input type="range" min="0" max="180" value="0" class="slider" id="wrist">
+			<p>Value: <span id="wristValue"></span></p>
+		</div>
+
+		<div class="slidecontainer">
+			<div> Elbow: </div>
+			<input type="range" min="0" max="180" value="0" class="slider" id="elbow">
+			<p>Value: <span id="elbowValue"></span></p>
+		</div>
+
+		<div class="slidecontainer">
+			<div> Shoulder: </div>
+			<input type="range" min="0" max="180" value="0" class="slider" id="shoulder">
+			<p>Value: <span id="shoulderValue"></span></p>
+		</div>
+
+	</div>
+	</body>
+
+</html>
