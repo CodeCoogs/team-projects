@@ -5,7 +5,6 @@ const jsonPath = './data/elbow.json';
 
 
 // Stepper motor
-
 var getDataFromJson = () => {
    return jsonfile.readFileSync(jsonPath);
 }
