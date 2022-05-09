@@ -1,12 +1,13 @@
 let express = require('express');
-let jsonfile = require("jsonfile");
 let router = express.Router();
+let jsonfile = require("jsonfile");
 const jsonPath = './data/fingers.json';
 
 // Johnny five
+/*
 var five = require("johnny-five");
 var board = new five.Board();
-
+*/
 var getDataFromJson = () => {
    return jsonfile.readFileSync(jsonPath);
 }
@@ -16,14 +17,14 @@ router.get('/', function(req, res){
    const jsonData = getDataFromJson();
    res.status(200).send(jsonData);
 });
-
+/*
 board.on("ready", function() {
    var thumb = new five.Servo(1);
    var index = new five.Servo(2);
    var middle = new five.Servo(3);
    var ring = new five.Servo(4);
    var pinky = new five.Servo(5);
-
+*/
 
    router.post('/', (req, res) => {
       res.setHeader("Access-Control-Allow-Origin", "*")
@@ -39,13 +40,13 @@ board.on("ready", function() {
       const curMiddle = req.body.middle;
       const curRing = req.body.ring;
       const curPinky = req.body.pinky;
-
+      /*
       thumb.to(curThumb);
       index.to(curIndex);
       middle.to(curMiddle);
       ring.to(curRing);
       pinky.to(curPinky);
-
+      */
       const newJson = {
          thumb: curThumb,
          index: curIndex,
@@ -59,5 +60,5 @@ board.on("ready", function() {
 
    });
 
-});
+//});
 module.exports = router;
