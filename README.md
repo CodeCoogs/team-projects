@@ -2,6 +2,7 @@ All team members who are participating in projects add your name
 
 GITGUD:
 - Tailer Nguyen
+- Bryant Le
 - Fernando Ramirez
 - Elizabeth Nguyen
 - Bryant Huynh
