@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let jsonfile = require("jsonfile");
-const jsonPath = './data/wrist.json';
+const jsonPath = './data/controller/wrist.json';
 
 var getDataFromJson = () => {
    return jsonfile.readFileSync(jsonPath);
