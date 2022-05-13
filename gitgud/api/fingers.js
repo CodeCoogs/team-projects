@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let jsonfile = require("jsonfile");
-const jsonPath = './data/fingers.json';
+const jsonPath = './data/controller/fingers.json';
 
 // Johnny five //////////////////////////////
 const {Board, Servo} = require("johnny-five");
@@ -25,9 +25,9 @@ board.on("ready", function() {
    0,2,4,8,9,10,11,12,13
 
    */
-   var thumb = new Servo(0);
-   var index = new Servo(12);
-   var middle = new Servo(13);
+   var thumb = new Servo(8);
+   //var index = new Servo(12);
+   //var middle = new Servo(13);
    //var ring = new five.Servo(4);
    //var pinky = new five.Servo(5);
    
@@ -48,8 +48,8 @@ board.on("ready", function() {
       const curPinky = req.body.pinky;
       
       thumb.to(curThumb);
-      index.to(curIndex);
-      middle.to(curMiddle);
+      //index.to(curIndex);
+      //middle.to(curMiddle);
       //ring.to(curRing);
       //pinky.to(curPinky);
       
