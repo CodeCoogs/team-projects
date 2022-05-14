@@ -1,20 +1,19 @@
 :root {
-  --blue: #3b82f6;
-  --purple: #6366f1;
-  --yellow: #facc15;
-  --green: #22c55e;
-  --red: #dc2626;
+  --cyan-500: #06b6d4;
+  --cyan-600: #0891b2;
+  --cyan-800: #155e75;
   --white: #f9fafb;
   --black: #0f172a;
   --dark-grey: #334155;
 }
 
-/*Body styles*/
+/* Body styles */
 body {
 	background-color: var(--black);
 	color: var(--white);
 }
 
+/* Slider styles */
 .slider-container {
   position: relative;
   margin: 0 10rem 0 10rem;
@@ -47,59 +46,45 @@ body {
 }
 /* Finger colors */
 #thumb::-webkit-slider-thumb {
-  background: var(--blue);
+  background: var(--cyan-500);
 }
 #thumb::-moz-range-thumb {
-  background: var(--blue);
+  background: var(--cyan-500);
 }
 #index::-webkit-slider-thumb {
-  background: var(--blue);
+  background: var(--cyan-500);
 }
 #index::-moz-range-thumb {
-  background: var(--blue);
+  background: var(--cyan-500);
 }
 #middle::-webkit-slider-thumb {
-  background: var(--blue);
+  background: var(--cyan-500);
 }
 #middle::-moz-range-thumb {
-  background: var(--blue);
+  background: var(--cyan-500);
 }
 #ring::-webkit-slider-thumb {
-  background: var(--blue);
+  background: var(--cyan-500);
 }
 #ring::-moz-range-thumb {
-  background: var(--blue);
+  background: var(--cyan-500);
 }
 #pinky::-webkit-slider-thumb {
-  background: var(--blue);
+  background: var(--cyan-500);
 }
 #pinky::-moz-range-thumb {
-  background: var(--blue);
+  background: var(--cyan-500);
 }
 #hand::-webkit-slider-thumb {
-  background: var(--purple);
+  background: var(--cyan-600);
 }
 #hand::-moz-range-thumb {
-  background: var(--purple);
+  background: var(--cyan-600);
 }
 /* wrist color */
 #wrist::-webkit-slider-thumb {
-  background: var(--yellow);
+  background: var(--cyan-800);
 }
 #wrist::-moz-range-thumb {
-  background: var(--yellow);
-}
-/* elbow color */
-#elbow::-webkit-slider-thumb {
-  background: var(--green);
-}
-#elbow::-moz-range-thumb {
-  background: var(--green);
-}
-/* shoulder color */
-#shoulder::-webkit-slider-thumb {
-  background: var(--red);
-}
-#shoulder::-moz-range-thumb {
-  background: var(--red);
+  background: var(--cyan-800);
 }

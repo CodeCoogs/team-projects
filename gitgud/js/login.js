@@ -6,7 +6,9 @@ function validate() {
     let password = document.getElementById("passWord").value;
 
     // type in test for both username and password to re-direct you to slider page
-    if (username == "test" && password == "test") {
+    var obj = JSON.parse(localStorage.getItem('signup'));
+
+    if (username == obj.username && password == obj.password) {
         window.location.href = 'controller.html';
     } else {
         document.getElementById("alert").style.display = "flex";
