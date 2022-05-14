@@ -22,21 +22,12 @@ let hand = 0;
 let slider7 = document.getElementById("wrist");
 let output7 = document.getElementById("wristValue");
 let wrist = 0;
-// Elbow
-let slider8 = document.getElementById("elbow");
-let output8 = document.getElementById("elbowValue");
-let elbow = 0;
-// Shoulder
-let slider9 = document.getElementById("shoulder");
-let output9 = document.getElementById("shoulderValue");
-let shoulder = 0;
+
 
 // Updates the servo angle back to zero
 window.addEventListener('load', async function() {
     await sendFingerValues(thumb, index, middle, ring, pinky);
     await sendWristValue(wrist);
-    await sendElbowValue(elbow);
-    await sendShoulderValue(shoulder);
 })
 
 // Update the current slider value (each time you drag the slider handle)
@@ -104,21 +95,7 @@ slider7.oninput = async function () {
     await sendWristValue(wrist);
 };
 
-// Slider for elbow
-output8.innerHTML = slider8.value;
-slider8.oninput = async function () {
-    output8.innerHTML = this.value;
-    elbow = this.value;
-    await sendElbowValue(elbow);
-};
 
-// Slider for shoulder
-output9.innerHTML = slider9.value;
-slider9.oninput = async function () {
-    output9.innerHTML = this.value;
-    shoulder = this.value;
-    await sendShoulderValue(shoulder);
-};
 
 // Sends post request to /fingers end point
 async function sendFingerValues(thumb, index, middle, ring, pinky){
@@ -160,38 +137,3 @@ async function sendWristValue(wrist){
     }));
 }
 
-// Sends post request to /elbow end point
-async function sendElbowValue(elbow){
-    // Creating a XHR object
-    let xhr = new XMLHttpRequest();
-    let url = "http://localhost:3000/elbow";
-
-    // open a connection
-    xhr.open("POST", url, true);
-
-    // Set the request header i.e. which type of content you are sending
-    xhr.setRequestHeader('Content-type','application/json');
-
-    // Send the data
-    xhr.send(JSON.stringify({
-        elbow: parseInt(elbow)
-    }));
-}
-
-// Sends post request to /elbow end point
-async function sendShoulderValue(shoulder){
-    // Creating a XHR object
-    let xhr = new XMLHttpRequest();
-    let url = "http://localhost:3000/shoulder";
-
-    // open a connection
-    xhr.open("POST", url, true);
-
-    // Set the request header i.e. which type of content you are sending
-    xhr.setRequestHeader('Content-type','application/json');
-
-    // Send the data
-    xhr.send(JSON.stringify({
-        shoulder: parseInt(shoulder)
-    }));
-}
