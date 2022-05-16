@@ -16,14 +16,10 @@ app.use(upload.array());
 
 let fingers = require('./fingers.js');
 let wrist = require('./wrist.js');
-let elbow = require('./elbow.js');
-let shoulder = require('./shoulder.js');
 
 
 app.use('/fingers', fingers);
 app.use('/wrist', wrist);
-app.use('/elbow', elbow);
-app.use('/shoulder', shoulder);
 
 
 app.listen(PORT, () => {

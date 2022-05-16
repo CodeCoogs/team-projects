@@ -25,10 +25,11 @@ board.on("ready", function() {
    0,2,4,8,9,10,11,12,13
 
    */
-   var thumb = new Servo(8);
-   //var index = new Servo(12);
-   //var middle = new Servo(13);
-   //var ring = new five.Servo(4);
+
+   var thumb = new Servo(0);
+   var index = new Servo(2);
+   var middle = new Servo(9);
+   var ring = new Servo(11);
    //var pinky = new five.Servo(5);
    
 
@@ -48,9 +49,9 @@ board.on("ready", function() {
       const curPinky = req.body.pinky;
       
       thumb.to(curThumb);
-      //index.to(curIndex);
-      //middle.to(curMiddle);
-      //ring.to(curRing);
+      index.to(curIndex);
+      middle.to(curMiddle);
+      ring.to(curRing);
       //pinky.to(curPinky);
       
       const newJson = {
