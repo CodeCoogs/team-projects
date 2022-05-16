@@ -22,8 +22,6 @@ let shoulder = require('./shoulder.js');
 
 app.use('/fingers', fingers);
 app.use('/wrist', wrist);
-app.use('/elbow', elbow);
-app.use('/shoulder', shoulder);
 
 
 app.listen(PORT, () => {
