@@ -26,11 +26,11 @@ board.on("ready", function() {
 
    */
 
-   var thumb = new Servo(0);
-   var index = new Servo(2);
+   var thumb = new Servo(2);
+   var index = new Servo(4);
    var middle = new Servo(9);
    var ring = new Servo(11);
-   //var pinky = new five.Servo(5);
+   var pinky = new Servo(13);
    
 
    router.post('/', (req, res) => {
@@ -52,7 +52,7 @@ board.on("ready", function() {
       index.to(curIndex);
       middle.to(curMiddle);
       ring.to(curRing);
-      //pinky.to(curPinky);
+      pinky.to(curPinky);
       
       const newJson = {
          thumb: curThumb,

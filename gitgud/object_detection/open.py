@@ -55,6 +55,9 @@ while(True):
         
     asyncio.run(updateFingers(finger_val))
 
+#    if(object_detected == True):
+#        time.sleep(5)
+
     cv2.imshow('Frame', frame)
     cv2.imshow('Mask', mask)
 
